@@ -223,6 +223,16 @@ class Fixture
     }
 
     /**
+     * Set a specific context value
+     */
+    public function setContext(string $key, mixed $value): static
+    {
+        $this->context->add($key, $value);
+
+        return $this;
+    }
+
+    /**
      * Merge context values into the fixture
      * @param array<string, mixed> $context
      */
