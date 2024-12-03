@@ -82,7 +82,7 @@ class Response
     /**
      * Create a new response instance.
      */
-    public function __construct(ResponseInterface $psrResponse, PendingRequest $pendingRequest, RequestInterface $psrRequest, Throwable $senderException = null)
+    public function __construct(ResponseInterface $psrResponse, PendingRequest $pendingRequest, RequestInterface $psrRequest, ?Throwable $senderException = null)
     {
         $this->psrRequest = $psrRequest;
         $this->psrResponse = $psrResponse;

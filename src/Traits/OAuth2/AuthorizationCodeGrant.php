@@ -33,7 +33,7 @@ trait AuthorizationCodeGrant
      *
      * @param array<string> $scopes
      */
-    public function getAuthorizationUrl(array $scopes = [], string $state = null, string $scopeSeparator = ' ', array $additionalQueryParameters = []): string
+    public function getAuthorizationUrl(array $scopes = [], ?string $state = null, string $scopeSeparator = ' ', array $additionalQueryParameters = []): string
     {
         $config = $this->oauthConfig();
 
@@ -72,7 +72,7 @@ trait AuthorizationCodeGrant
      * @param callable(TRequest): (void)|null $requestModifier
      * @throws \Saloon\Exceptions\InvalidStateException
      */
-    public function getAccessToken(string $code, string $state = null, string $expectedState = null, bool $returnResponse = false, ?callable $requestModifier = null): OAuthAuthenticator|Response
+    public function getAccessToken(string $code, ?string $state = null, ?string $expectedState = null, bool $returnResponse = false, ?callable $requestModifier = null): OAuthAuthenticator|Response
     {
         $this->oauthConfig()->validate();
 
@@ -140,7 +140,7 @@ trait AuthorizationCodeGrant
     /**
      * Create the OAuthAuthenticator from a response.
      */
-    protected function createOAuthAuthenticatorFromResponse(Response $response, string $fallbackRefreshToken = null): OAuthAuthenticator
+    protected function createOAuthAuthenticatorFromResponse(Response $response, ?string $fallbackRefreshToken = null): OAuthAuthenticator
     {
         $responseData = $response->object();
 

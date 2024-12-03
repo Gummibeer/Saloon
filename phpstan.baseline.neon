@@ -21,11 +21,6 @@ parameters:
 			path: src/Http/Faking/MockClient.php
 
 		-
-		 message: "#^Result of \\&\\& is always false.$#"
-		 count: 1
-		 path: src/Data/MultipartValue.php
-
-		-
 		 message: "#^Parameter \\#1 \\$response of method Saloon\\\\Http\\\\PendingRequest\\:\\:executeResponsePipeline\\(\\) expects Saloon\\\\Http\\\\Response\\, GuzzleHttp\\\\Promise\\\\PromiseInterface\\|Saloon\\\\Http\\\\Response given.$#"
 		 count: 1
 		 path: src/Traits/Connector/SendsRequests.php
